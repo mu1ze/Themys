@@ -50,8 +50,8 @@ importers:
         specifier: 16.3.8
         version: 16.3.8(@babel/core@7.29.7)(@opentelemetry/api@1.9.1)(@playwright/test@1.61.1)(@types/node@20.19.43)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       openai:
-        specifier: ^6.44.0
-        version: 6.44.0(ws@8.21.0(bufferutil@4.1.0)(utf-8-validate@6.0.6))(zod@4.4.3)
+        specifier: ^7.39.0
+        version: 7.39.0(@aws-sdk/credential-provider-node@3.972.78)(@smithy/hash-node@4.4.16)(@smithy/signature-v4@5.6.12)(undici@7.29.1)(ws@8.21.0(bufferutil@4.1.0)(utf-8-validate@6.0.6))(zod@4.4.3)
       react:
         specifier: 19.2.8
         version: 19.2.8
@@ -3380,12 +3380,25 @@ packages:
     resolution: {integrity: sha512-kbpaSSGJTWdAY5KPVeMOKXSrPtr8C8C7wodJbcsd51jRnmD+GZu8Y0VoU6Dm5Z4vWr0Ig/1NKuWRKf7j5aaYSg==}
     engines: {node: '>=6'}
 
-  openai@6.44.0:
-    resolution: {integrity: sha512-09/gH+8jH0RgUwsgWHAaxsKGRT5zVZ95IaJUnqAWj6XejIBmnFRwq2WUIF37VtDEsmGrtPmvCs5+yBSeZGWvkA==}
+  openai@7.39.0:
+    resolution: {integrity: sha512-iEA9ndbrj32vhYZwJg2v9BQVuztGUOb2SBQU16ZcWNkQHWEBjtarxjqR9c6d5PbWMG0Eyfhk66OZ0iJ8XpFjyw==}
+    engines: {node: '>=22.0.0'}
     peerDependencies:
-      ws: ^8.18.0
+      '@aws-sdk/credential-provider-node': '>=3.972.0 <4'
+      '@smithy/hash-node': '>=4.3.0 <5'
+      '@smithy/signature-v4': '>=5.4.0 <6'
+      undici: 7.29.1
+      ws: ^8.21.0
       zod: ^3.25 || ^4.0
     peerDependenciesMeta:
+      '@aws-sdk/credential-provider-node':
+        optional: true
+      '@smithy/hash-node':
+        optional: true
+      '@smithy/signature-v4':
+        optional: true
+      undici:
+        optional: true
       ws:
         optional: true
       zod:
@@ -7743,8 +7756,12 @@ snapshots:
     dependencies:
       mimic-fn: 2.1.0
 
-  openai@6.44.0(ws@8.21.0(bufferutil@4.1.0)(utf-8-validate@6.0.6))(zod@4.4.3):
+  openai@7.39.0(@aws-sdk/credential-provider-node@3.972.78)(@smithy/hash-node@4.4.16)(@smithy/signature-v4@5.6.12)(undici@7.29.1)(ws@8.21.0(bufferutil@4.1.0)(utf-8-validate@6.0.6))(zod@4.4.3):
     optionalDependencies:
+      '@aws-sdk/credential-provider-node': 3.972.78
+      '@smithy/hash-node': 4.4.16
+      '@smithy/signature-v4': 5.6.12
+      undici: 7.29.1
       ws: 8.21.0(bufferutil@4.1.0)(utf-8-validate@6.0.6)
       zod: 4.4.3
 
