@@ -1,0 +1,12 @@
+xcuserdata/
+*.xcuserstate
+DerivedData/
+
+# Swift packages and native distribution artifacts
+.build/
+.swiftpm/
+build/
+*.xcarchive/
+*.ipa
+*.dSYM/
+SourcePackages/

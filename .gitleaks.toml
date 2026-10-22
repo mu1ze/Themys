@@ -1,0 +1,11 @@
+title = "Themys credential scanning"
+
+[extend]
+useDefault = true
+
+# Exact documentation placeholders only. Never allowlist a credential or file
+# merely to make the history gate pass.
+[[allowlists]]
+description = "Literal API documentation placeholder"
+regexTarget = "secret"
+regexes = ['''^YOUR_API_KEY$''']

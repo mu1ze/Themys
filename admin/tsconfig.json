@@ -1,0 +1,120 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "allowImportingTsExtensions": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "../src/*"
+      ],
+      "react": [
+        "./node_modules/@types/react"
+      ],
+      "react/jsx-runtime": [
+        "./node_modules/@types/react/jsx-runtime"
+      ],
+      "react/jsx-dev-runtime": [
+        "./node_modules/@types/react/jsx-dev-runtime"
+      ],
+      "react-dom": [
+        "./node_modules/@types/react-dom"
+      ],
+      "react-dom/*": [
+        "./node_modules/@types/react-dom/*"
+      ],
+      "next": [
+        "./node_modules/next"
+      ],
+      "next/*": [
+        "./node_modules/next/*"
+      ],
+      "@clerk/nextjs": [
+        "./node_modules/@clerk/nextjs"
+      ],
+      "@clerk/nextjs/*": [
+        "./node_modules/@clerk/nextjs/*"
+      ],
+      "stripe": [
+        "./node_modules/stripe"
+      ],
+      "stripe/*": [
+        "./node_modules/stripe/*"
+      ],
+      "server-only": [
+        "../src/lib/server-only-empty.ts"
+      ],
+      "@opennextjs/cloudflare": [
+        "./node_modules/@opennextjs/cloudflare"
+      ],
+      "@opennextjs/cloudflare/*": [
+        "./node_modules/@opennextjs/cloudflare/*"
+      ],
+      "lucide-react": [
+        "./node_modules/lucide-react"
+      ],
+      "lucide-react/*": [
+        "./node_modules/lucide-react/*"
+      ],
+      "recharts": [
+        "./node_modules/recharts"
+      ],
+      "recharts/*": [
+        "./node_modules/recharts/*"
+      ],
+      "framer-motion": [
+        "./node_modules/framer-motion"
+      ],
+      "framer-motion/*": [
+        "./node_modules/framer-motion/*"
+      ],
+      "motion": [
+        "./node_modules/motion"
+      ],
+      "motion/*": [
+        "./node_modules/motion/*"
+      ],
+      "@react-pdf/renderer": [
+        "./node_modules/@react-pdf/renderer"
+      ],
+      "@react-pdf/renderer/*": [
+        "./node_modules/@react-pdf/renderer/*"
+      ]
+    },
+    "rootDirs": [
+      ".",
+      "../src"
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "./**/*.ts",
+    "./**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next"
+  ]
+}

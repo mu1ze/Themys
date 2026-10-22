@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
+  <title>Themys Control Center</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Themys menu">
+      <div class="brand-lockup">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L19 5.5V13C19 17.5 15.5 21 12 22C8.5 21 5 17.5 5 13V5.5L12 2Z" fill="currentColor"/>
+            <path d="M9 12l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span>
+          <strong>Themys</strong>
+          <small>Extension controls</small>
+        </span>
+      </div>
+
+      <nav class="menu" role="tablist" aria-label="Control center sections" aria-orientation="vertical">
+        <button class="menu-item is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-overview" data-section="overview">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>
+          <span>Overview</span>
+        </button>
+        <button class="menu-item" type="button" role="tab" aria-selected="false" aria-controls="panel-scanning" tabindex="-1" data-section="scanning">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 12h8M12 8v8"/></svg>
+          <span>Scanning</span>
+        </button>
+        <button class="menu-item" type="button" role="tab" aria-selected="false" aria-controls="panel-clauses" tabindex="-1" data-section="clauses">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
+          <span>Custom clauses</span>
+          <span id="menu-clause-count" class="menu-count">0</span>
+        </button>
+        <button class="menu-item" type="button" role="tab" aria-selected="false" aria-controls="panel-account" tabindex="-1" data-section="account">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg>
+          <span>Account &amp; plan</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span class="privacy-dot" aria-hidden="true"></span>
+        <p>Page detection happens on your device.</p>
+        <div class="sidebar-links">
+          <a id="sidebar-dashboard-link" href="#" target="_blank" rel="noopener">Dashboard</a>
+          <a href="https://docs.themys.ca/legal#privacy" target="_blank" rel="noopener">Privacy</a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Control center</p>
+          <h1 id="page-title">Your extension at a glance</h1>
+          <p id="page-description" class="page-description">Choose how Themys finds and reviews terms while you browse.</p>
+        </div>
+        <div id="account-chip" class="account-chip is-loading" aria-live="polite">
+          <span class="account-status-dot" aria-hidden="true"></span>
+          <span id="account-chip-label">Checking account…</span>
+        </div>
+      </header>
+
+      <div id="auth-warning" class="notice notice-warning hidden" role="status">
+        <span class="notice-icon" aria-hidden="true">!</span>
+        <div>
+          <strong>Sign in to sync your preferences</strong>
+          <p>Automatic scanning still works on this device, but clauses, location, and plan details need your Themys account.</p>
+        </div>
+        <button id="sign-in-btn" class="button button-secondary" type="button">Sign in</button>
+      </div>
+
+      <section id="panel-overview" class="panel" role="tabpanel" data-panel="overview">
+        <div class="hero-card">
+          <div class="hero-copy">
+            <span class="hero-kicker">Browser protection</span>
+            <h2 id="hero-status-title">Themys is getting ready</h2>
+            <p id="hero-status-copy">We’re loading your extension preferences.</p>
+          </div>
+          <div class="protection-orbit" aria-hidden="true">
+            <span class="orbit orbit-one"></span>
+            <span class="orbit orbit-two"></span>
+            <span class="shield-glyph">
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none"><path d="M12 2L19 5.5V13C19 17.5 15.5 21 12 22C8.5 21 5 17.5 5 13V5.5L12 2Z" fill="currentColor"/><path d="M8.8 12.1 11 14.3l4.5-4.7" stroke="white" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="stat-grid" aria-label="Extension summary">
+          <button class="stat-card" type="button" data-go-to="scanning">
+            <span class="stat-label">Auto scan</span>
+            <strong id="overview-auto-scan">Loading</strong>
+            <span class="stat-detail">On this device</span>
+          </button>
+          <button class="stat-card" type="button" data-go-to="clauses">
+            <span class="stat-label">Watch list</span>
+            <strong id="overview-clause-count">—</strong>
+            <span class="stat-detail">Clauses prioritized</span>
+          </button>
+          <button class="stat-card" type="button" data-go-to="clauses">
+            <span class="stat-label">Playbook</span>
+            <strong id="overview-playbook">—</strong>
+            <span class="stat-detail">Review profile</span>
+          </button>
+          <button class="stat-card" type="button" data-go-to="account">
+            <span class="stat-label">Plan</span>
+            <strong id="overview-plan">—</strong>
+            <span id="overview-plan-detail" class="stat-detail">Account status</span>
+          </button>
+        </div>
+
+        <section class="surface-card quick-card">
+          <div>
+            <span class="section-kicker">Quick controls</span>
+            <h2>Fine-tune what happens on legal pages</h2>
+          </div>
+          <div class="quick-actions">
+            <button class="quick-action" type="button" data-go-to="scanning">
+              <span class="quick-icon" aria-hidden="true">⌁</span>
+              <span><strong>Detection behavior</strong><small>Choose automatic scans or a prompt first.</small></span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </button>
+            <button class="quick-action" type="button" data-go-to="clauses">
+              <span class="quick-icon" aria-hidden="true">§</span>
+              <span><strong>Edit clause watch list</strong><small>Add topics you never want a scan to miss.</small></span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </button>
+            <button class="quick-action" type="button" data-go-to="account">
+              <span class="quick-icon" aria-hidden="true">◇</span>
+              <span><strong>Plan and billing</strong><small>See your plan and open secure billing controls.</small></span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
+        </section>
+      </section>
+
+      <section id="panel-scanning" class="panel hidden" role="tabpanel" data-panel="scanning" hidden>
+        <section class="surface-card preference-card">
+          <div class="preference-row">
+            <div class="preference-copy">
+              <span class="control-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 12h8M12 8v8"/></svg>
+              </span>
+              <div>
+                <h2>Automatic scanning</h2>
+                <p>When Themys confidently detects a Terms or Privacy page, start the review automatically.</p>
+              </div>
+            </div>
+            <label class="switch">
+              <span class="sr-only">Automatically scan detected legal pages</span>
+              <input type="checkbox" id="auto-scan-toggle" aria-describedby="auto-scan-explanation" />
+              <span class="slider" aria-hidden="true"></span>
+            </label>
+          </div>
+          <div id="auto-scan-explanation" class="behavior-preview">
+            <span id="behavior-icon" class="behavior-icon" aria-hidden="true">↗</span>
+            <p><strong id="behavior-title">Ask before scanning</strong><span id="behavior-copy">Themys shows a small prompt and waits for you to start the scan.</span></p>
+          </div>
+        </section>
+
+        <section class="surface-card">
+          <div class="card-heading">
+            <span class="section-kicker">Jurisdiction</span>
+            <h2>Make results relevant to where you live</h2>
+            <p>Your location changes which consumer and privacy rules Themys prioritizes. It is stored with your account.</p>
+          </div>
+          <div class="field-grid">
+            <label class="field">
+              <span>Country</span>
+              <input type="text" id="country-input" autocomplete="country-name" placeholder="e.g. Canada" />
+            </label>
+            <label class="field">
+              <span>Province, state, or region</span>
+              <input type="text" id="state-input" autocomplete="address-level1" placeholder="e.g. Ontario" />
+            </label>
+          </div>
+        </section>
+
+        <section class="surface-card compact-card">
+          <div class="preference-row">
+            <div class="preference-copy">
+              <span class="control-icon muted-icon" aria-hidden="true">◎</span>
+              <div>
+                <h2>Dismissed sites</h2>
+                <p>Sites you dismiss stay quiet for 24 hours. Clear them to allow prompts again now.</p>
+              </div>
+            </div>
+            <button id="clear-dismissed-btn" type="button" class="button button-secondary">Clear dismissed sites</button>
+          </div>
+          <p id="dismissed-status" class="inline-status hidden" role="status"></p>
+        </section>
+      </section>
+
+      <section id="panel-clauses" class="panel hidden" role="tabpanel" data-panel="clauses" hidden>
+        <section class="surface-card">
+          <div class="card-heading card-heading-row">
+            <div>
+              <span class="section-kicker">Review playbook</span>
+              <h2>Start with the contract that fits</h2>
+              <p>Changing playbooks replaces preset topics and keeps the custom clauses you added.</p>
+            </div>
+            <span id="clause-total-badge" class="soft-badge">0 clauses</span>
+          </div>
+          <div class="playbook-grid" role="radiogroup" aria-label="Review playbook">
+            <label class="playbook-card">
+              <input type="radio" name="playbook" value="consumer_app" />
+              <span class="playbook-check" aria-hidden="true"></span>
+              <strong>Consumer app</strong>
+              <small>Renewals, data use, arbitration, and account access.</small>
+            </label>
+            <label class="playbook-card">
+              <input type="radio" name="playbook" value="saas_vendor" />
+              <span class="playbook-check" aria-hidden="true"></span>
+              <strong>SaaS vendor</strong>
+              <small>Liability, data processing, audits, and pricing changes.</small>
+            </label>
+            <label class="playbook-card">
+              <input type="radio" name="playbook" value="contractor" />
+              <span class="playbook-check" aria-hidden="true"></span>
+              <strong>Contractor</strong>
+              <small>Ownership, payment, termination, and non-solicitation.</small>
+            </label>
+          </div>
+          <select id="playbook-select" class="sr-only" aria-hidden="true" tabindex="-1">
+            <option value="consumer_app">Consumer app</option>
+            <option value="saas_vendor">SaaS vendor</option>
+            <option value="contractor">Contractor / services</option>
+          </select>
+        </section>
+
+        <section class="surface-card">
+          <div class="card-heading">
+            <span class="section-kicker">Your watch list</span>
+            <h2>Custom clauses</h2>
+            <p>Add a topic in plain language. Press Enter or comma after each one.</p>
+          </div>
+
+          <div id="loading-spinner" class="loading-state">
+            <span class="spinner" aria-hidden="true"></span>
+            <span>Loading your clauses…</span>
+          </div>
+
+          <div id="clauses-container" class="hidden">
+            <label class="clause-composer" for="clause-input">
+              <span id="tags-list" class="tags-list"></span>
+              <input type="text" id="clause-input" maxlength="120" placeholder="Add a clause, like “AI training”" />
+            </label>
+
+            <div class="suggestions">
+              <span class="field-label">Popular additions</span>
+              <div id="common-clauses-list" class="suggestion-list">
+                <button class="suggestion-button" type="button" data-clause="Refunds">+ Refunds</button>
+                <button class="suggestion-button" type="button" data-clause="Auto-renewal">+ Auto-renewal</button>
+                <button class="suggestion-button" type="button" data-clause="Data sharing">+ Data sharing</button>
+                <button class="suggestion-button" type="button" data-clause="Arbitration">+ Arbitration</button>
+                <button class="suggestion-button" type="button" data-clause="AI training">+ AI training</button>
+                <button class="suggestion-button" type="button" data-clause="Account termination">+ Account termination</button>
+              </div>
+            </div>
+
+            <label class="strict-card">
+              <input type="checkbox" id="strict-mode-toggle" />
+              <span class="check-box" aria-hidden="true"></span>
+              <span>
+                <strong>Only show matches from my watch list</strong>
+                <small>Strict mode hides other risky clauses. Leave it off for the fullest review.</small>
+              </span>
+            </label>
+          </div>
+        </section>
+      </section>
+
+      <section id="panel-account" class="panel hidden" role="tabpanel" data-panel="account" hidden>
+        <section class="plan-card">
+          <div>
+            <span class="section-kicker section-kicker-light">Current plan</span>
+            <div class="plan-heading">
+              <h2 id="plan-name">Themys Free</h2>
+              <span id="plan-status" class="plan-status">Checking</span>
+            </div>
+            <p id="plan-description">Your plan controls monthly scans, explanations, and monitoring.</p>
+          </div>
+          <a id="manage-plan-link" href="#" target="_blank" rel="noopener" class="button button-light">Manage subscription <span aria-hidden="true">↗</span></a>
+        </section>
+
+        <div class="account-grid">
+          <section class="surface-card account-action-card">
+            <span class="account-action-icon" aria-hidden="true">⌘</span>
+            <h2>Web dashboard</h2>
+            <p>Open your scans, monitoring, and complete account settings.</p>
+            <a id="dashboard-link" href="#" target="_blank" rel="noopener" class="text-link">Open dashboard <span aria-hidden="true">→</span></a>
+          </section>
+          <section class="surface-card account-action-card">
+            <span class="account-action-icon" aria-hidden="true">?</span>
+            <h2>Help &amp; feedback</h2>
+            <p>Questions about a scan or your plan? We’re happy to help.</p>
+            <a href="mailto:admin@themys.ca" class="text-link">Contact support <span aria-hidden="true">→</span></a>
+          </section>
+        </div>
+
+        <section class="surface-card compact-card">
+          <div class="preference-row">
+            <div class="preference-copy">
+              <span class="control-icon muted-icon" aria-hidden="true">↪</span>
+              <div>
+                <h2>Extension session</h2>
+                <p id="session-copy">Your extension uses your signed-in Themys account.</p>
+              </div>
+            </div>
+            <button id="sign-out-btn" class="button button-danger hidden" type="button">Sign out</button>
+          </div>
+        </section>
+
+        <p class="legal-links">
+          <a href="https://docs.themys.ca/legal#privacy" target="_blank" rel="noopener">Privacy policy</a>
+          <span>·</span>
+          <a href="https://docs.themys.ca/legal#terms" target="_blank" rel="noopener">Terms of service</a>
+        </p>
+      </section>
+
+      <div id="save-bar" class="save-bar hidden" aria-live="polite">
+        <div>
+          <strong>Unsaved account preferences</strong>
+          <span id="save-status">Your changes will apply to future scans.</span>
+        </div>
+        <button id="save-btn" class="button button-primary" type="button">Save changes</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="../config.js"></script>
+  <script src="../detection/themys-capture-policy.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

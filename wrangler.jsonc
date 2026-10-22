@@ -1,0 +1,164 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"main": "custom-worker.ts",
+	"name": "themys",
+	"workers_dev": false,
+	"preview_urls": true,
+	"compatibility_date": "2026-06-17",
+	"compatibility_flags": [
+		"nodejs_compat",
+		"global_fetch_strictly_public"
+	],
+	"alias": {
+		"server-only": "./src/lib/server-only-empty.ts"
+	},
+	"secrets": {
+		"required": [
+			"ADMIN_CLERK_IDS",
+			"CLERK_SECRET_KEY",
+			"CRON_SECRET",
+			"JINA_READER_KEY",
+			"NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY",
+			"OPENROUTER_API_KEY",
+			"SENTRY_DSN",
+			"STRIPE_SECRET_KEY",
+			"STRIPE_WEBHOOK_SECRET",
+			"STRIPE_PRICE_BASE_MONTHLY",
+			"STRIPE_PRICE_BASE_ANNUAL",
+			"STRIPE_PRICE_ADVANCED_MONTHLY",
+			"STRIPE_PRICE_ADVANCED_ANNUAL",
+			"STRIPE_PRICE_CREDITS_10",
+			"STRIPE_PRICE_CREDITS_50",
+			"STRIPE_PRICE_CREDITS_200",
+			"TURNSTILE_SECRET_KEY",
+			"USAGE_FINGERPRINT_SECRET"
+		]
+	},
+	"vars": {
+		"APP_URL": "https://themys.ca",
+		"MONITORING_EMAIL_FROM": "alerts@themys.ca",
+		"NEXT_PUBLIC_TURNSTILE_SITE_KEY": "0x4AAAAAAD2mBrPMglDJkY3V"
+	},
+	"triggers": {
+		"crons": [
+			"0 * * * *"
+		]
+	},
+	"routes": [
+		{
+			"pattern": "themys.ca",
+			"custom_domain": true
+		},
+		{
+			"pattern": "www.themys.ca",
+			"custom_domain": true
+		}
+	],
+	"assets": {
+		"directory": ".open-next/assets",
+		"binding": "ASSETS"
+	},
+	"services": [
+		{
+			"binding": "WORKER_SELF_REFERENCE",
+			"service": "themys",
+			"environment": "production"
+		},
+		{
+			"binding": "MONITORING_EMAIL_WORKER",
+			"service": "themys-monitoring-email"
+		}
+	],
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "themys-db",
+			"migrations_dir": "d1/migrations"
+		}
+	],
+	"r2_buckets": [
+		{
+			"binding": "DOCUMENTS_BUCKET",
+			"bucket_name": "themys-documents"
+		}
+	],
+	"kv_namespaces": [
+		{
+			"binding": "NEXT_INC_CACHE_KV",
+			"id": "42c47b929aac4e0695f5decd3e11fbbf"
+		},
+		{
+			"binding": "RATE_LIMIT_KV",
+			"id": "c5702c1c65484c448c9139789ea5452b"
+		},
+		{
+			"binding": "CACHE_KV",
+			"id": "42c47b929aac4e0695f5decd3e11fbbf"
+		}
+	],
+	"images": {
+		"binding": "IMAGES"
+	},
+	// Preview deployments do not inherit top-level bindings; mirror production
+	// so signed-in pages can reach the database, storage and service Workers.
+	"previews": {
+		"services": [
+			{
+				"binding": "WORKER_SELF_REFERENCE",
+				"service": "themys",
+				"environment": "production"
+			},
+			{
+				"binding": "MONITORING_EMAIL_WORKER",
+				"service": "themys-monitoring-email",
+				"environment": "production"
+			}
+		],
+		"d1_databases": [
+			{
+				"binding": "DB",
+				"database_name": "themys-db",
+				"database_id": "237af800-948d-47ee-bdb2-c5d4500ca937",
+				"migrations_dir": "d1/migrations"
+			}
+		],
+		"r2_buckets": [
+			{
+				"binding": "DOCUMENTS_BUCKET",
+				"bucket_name": "themys-documents"
+			}
+		],
+		"kv_namespaces": [
+			{
+				"binding": "NEXT_INC_CACHE_KV",
+				"id": "42c47b929aac4e0695f5decd3e11fbbf"
+			},
+			{
+				"binding": "RATE_LIMIT_KV",
+				"id": "c5702c1c65484c448c9139789ea5452b"
+			},
+			{
+				"binding": "CACHE_KV",
+				"id": "42c47b929aac4e0695f5decd3e11fbbf"
+			}
+		],
+		"images": {
+			"binding": "IMAGES"
+		}
+	},
+	"observability": {
+		"enabled": true,
+		"head_sampling_rate": 1,
+		"logs": {
+			"enabled": true,
+			"head_sampling_rate": 1,
+			"persist": true,
+			"invocation_logs": true
+		},
+		"traces": {
+			"enabled": false,
+			"persist": true,
+			"head_sampling_rate": 1
+		}
+	}
+}

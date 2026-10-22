@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Themys</title>
+  <link rel="stylesheet" href="onboarding.css" />
+</head>
+<body>
+  <div class="onboarding-container">
+    <!-- Progress dots -->
+    <div class="progress-bar">
+      <div class="dot active" data-step="0"></div>
+      <div class="dot" data-step="1"></div>
+      <div class="dot" data-step="2"></div>
+      <div class="dot" data-step="3"></div>
+    </div>
+
+    <!-- Step 0: Welcome -->
+    <div class="step active" id="step-0">
+      <div class="step-icon">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="64" height="64" rx="16" fill="#17191c" />
+          <path d="M20 44V20h8c6.627 0 12 4.477 12 10s-5.373 10-12 10h-4v4h-4zm4-14h4c4.418 0 8-2.686 8-6s-3.582-6-8-6h-4v12z" fill="white" />
+        </svg>
+      </div>
+      <h1>Welcome to Themys</h1>
+      <p class="subtitle">Your instant Terms of Service risk scanner</p>
+      <p class="description">
+        Themys analyzes Terms of Service and Privacy Policy pages as you browse,
+        surfacing clauses worth pushing back on — so you know what you are
+        agreeing to before you agree.
+      </p>
+      <button class="btn btn-primary" id="btn-next-0">Get Started</button>
+    </div>
+
+    <!-- Step 1: Sign In -->
+    <div class="step" id="step-1">
+      <div class="step-icon">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="64" height="64" rx="16" fill="#eff6ff" />
+          <path d="M32 16a10 10 0 0 0-10 10v4h-2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V32a2 2 0 0 0-2-2h-2v-4a10 10 0 0 0-10-10zm-6 14v-4a6 6 0 1 1 12 0v4H26zm8 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" fill="#17191c" />
+        </svg>
+      </div>
+      <h1>Sign In</h1>
+      <p class="subtitle">Connect your Themys account</p>
+      <p class="description">
+        Sign in to save your scan history, access higher usage limits, and
+        monitor ToS changes over time.
+      </p>
+      <button class="btn btn-primary" id="btn-signin">Sign In</button>
+      <button class="btn btn-text" id="btn-skip-signin">Skip for now</button>
+      <p class="hint" id="auth-waiting" style="display:none;">
+        Waiting for sign-in… This tab will update automatically.
+      </p>
+    </div>
+
+    <!-- Step 2: Demo -->
+    <div class="step" id="step-2">
+      <div class="step-icon">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="64" height="64" rx="16" fill="#f0fdf4" />
+          <path d="M18 20h28a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H18a2 2 0 0 1-2-2V22a2 2 0 0 1 2-2zm0 4v12h28V24H18zm4 16h20v4H22v-4z" fill="#16a34a" />
+        </svg>
+      </div>
+      <h1>See It in Action</h1>
+      <p class="subtitle">Here's what a scan looks like</p>
+
+      <!-- Mock overlay preview -->
+      <div class="demo-preview">
+        <div class="demo-header">
+          <span class="demo-score high">Needs attention</span>
+        </div>
+        <p class="demo-summary">A few clauses are worth pushing back on before you agree.</p>
+        <div class="demo-flags">
+          <div class="demo-flag high">
+            <span class="flag-label">🔴 Data Sharing</span>
+            <span class="flag-text">Your data may be shared with third parties without explicit consent.</span>
+          </div>
+          <div class="demo-flag medium">
+            <span class="flag-label">🟡 Auto-Renewal</span>
+            <span class="flag-text">Subscription renews automatically with limited cancellation window.</span>
+          </div>
+          <div class="demo-flag low">
+            <span class="flag-label">🟢 Arbitration</span>
+            <span class="flag-text">Disputes must go through binding arbitration.</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" id="btn-next-2">Got It</button>
+    </div>
+
+    <!-- Step 3: Done -->
+    <div class="step" id="step-3">
+      <div class="step-icon">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="64" height="64" rx="16" fill="#f0fdf4" />
+          <path d="M28.5 39.5l-7-7 2.83-2.83L28.5 33.84l10.17-10.17 2.83 2.83-13 13z" fill="#16a34a" />
+        </svg>
+      </div>
+      <h1>You're All Set!</h1>
+      <p class="subtitle">Ready to start scanning</p>
+      <p class="description">
+        Visit any website with a Terms of Service or Privacy Policy page.
+        Themys will show a badge when it is confident. Scans run on their own
+        only if you turn on automatic scanning in Settings.
+      </p>
+      <div class="try-it-box">
+        <p><strong>Try it now:</strong> visit a popular site's terms page, like
+          <a href="https://twitter.com/en/tos" target="_blank" rel="noopener">twitter.com/tos</a> or
+          <a href="https://www.facebook.com/terms.php" target="_blank" rel="noopener">facebook.com/terms</a>
+        </p>
+      </div>
+      <button class="btn btn-primary" id="btn-done">Start Browsing</button>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-bar" id="nav-bar">
+      <button class="btn btn-text" id="btn-back" style="visibility:hidden;">Back</button>
+      <button class="btn btn-text" id="btn-skip-all">Skip Setup</button>
+    </div>
+    <p class="legal-links"><a href="https://docs.themys.ca/legal#privacy" target="_blank" rel="noopener">Privacy</a> · <a href="https://docs.themys.ca/legal#terms" target="_blank" rel="noopener">Terms</a></p>
+  </div>
+
+  <script src="../detection/themys-capture-policy.js"></script>
+  <script src="onboarding.js"></script>
+</body>
+</html>

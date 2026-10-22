@@ -1,0 +1,39 @@
+name: Safari capture checks
+
+on:
+  pull_request:
+    paths:
+      - "ios/**"
+      - "extension/**"
+      - "packages/tos-detection/**"
+      - "src/**"
+      - "scripts/sync-ios-safari-extension.mjs"
+      - ".github/workflows/ios.yml"
+  push:
+    branches: [main]
+    paths:
+      - "ios/**"
+      - "extension/**"
+      - "packages/tos-detection/**"
+      - "src/**"
+      - "scripts/sync-ios-safari-extension.mjs"
+      - ".github/workflows/ios.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  capture-contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Test Safari capture and shared detection
+        run: node --test ios/tests/*.test.ts packages/tos-detection/*.test.js src/lib/themys-client.test.ts
+      - name: Verify shared resources are synchronized
+        run: |
+          node scripts/sync-ios-safari-extension.mjs
+          git diff --exit-code -- ios/ThemysSafariExtension/Resources

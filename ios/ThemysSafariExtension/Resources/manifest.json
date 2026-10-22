@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Themys",
+  "description": "Detect Terms pages in Safari and scan them with Themys.",
+  "version": "1.0.0",
+  "permissions": ["storage", "nativeMessaging"],
+  "host_permissions": ["https://themys.ca/*"],
+  "background": {
+    "scripts": ["config.js", "background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "detection/themys-detection.js",
+        "config.js",
+        "overlay.js",
+        "popup-detector.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

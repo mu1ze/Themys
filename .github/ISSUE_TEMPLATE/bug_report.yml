@@ -1,0 +1,25 @@
+name: Bug report
+description: Report a reproducible problem (no credentials or private data).
+body:
+  - type: markdown
+    attributes:
+      value: "For credential leaks or vulnerabilities, follow SECURITY.md instead of opening a public issue. Use synthetic input and remove account details."
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe expected and actual behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Include a minimal synthetic example, route, and relevant command.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, browser, Node/pnpm versions, commit, and local or deployed context.

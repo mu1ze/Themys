@@ -1,0 +1,44 @@
+name: Extension release gates
+
+on:
+  pull_request:
+    paths:
+      - "artifacts/extension/**"
+      - "scripts/build-extension.mjs"
+      - ".github/workflows/extension.yml"
+  push:
+    branches: [main]
+    paths:
+      - "artifacts/extension/**"
+      - "scripts/build-extension.mjs"
+      - ".github/workflows/extension.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: extension-release-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Validate production extension
+        working-directory: extension
+        run: npm run validate:prod
+      - name: Package production extension
+        working-directory: extension
+        run: npm run build:prod
+      - name: Upload pre-release artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: themys-chrome-extension-pre-release
+          path: artifacts/extension/themys-production.zip
+          if-no-files-found: error

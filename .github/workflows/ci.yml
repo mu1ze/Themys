@@ -1,0 +1,78 @@
+name: Release gates
+
+on:
+  pull_request:
+    paths-ignore:
+      - "docs/**"
+      - "ios/**"
+      - "scripts/sync-ios-safari-extension.mjs"
+      - ".github/workflows/ios.yml"
+      - ".github/workflows/docs.yml"
+  push:
+    branches: [main]
+    paths-ignore:
+      - "docs/**"
+      - "ios/**"
+      - "scripts/sync-ios-safari-extension.mjs"
+      - ".github/workflows/ios.yml"
+      - ".github/workflows/docs.yml"
+
+concurrency:
+  group: release-gates-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  # Code scanning is not enabled on this repository, so skip SARIF upload.
+  # The scanner still fails the job when lockfile vulnerabilities are found.
+  vulnerability-scan:
+    uses: google/osv-scanner-action/.github/workflows/osv-scanner-reusable.yml@v2.3.8
+    permissions:
+      security-events: write
+      contents: read
+      actions: read
+    with:
+      scan-args: |-
+        --lockfile=pnpm-lock.yaml
+      fail-on-vuln: true
+      upload-sarif: false
+
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      APP_URL: https://themys.ca
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm audit:prod
+      - run: pnpm verify:release-config
+      - run: pnpm build
+      - run: pnpm build:cloudflare
+      - name: Record tested lockfile
+        run: sha256sum pnpm-lock.yaml
+
+  migrations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm d1:migrate:local
+      - run: pnpm d1:migrations:list:local

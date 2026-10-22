@@ -1,0 +1,763 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06B9D4DC16FB1BACF02CF8F6 /* ThemysMacSafariExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 988EC221C18117A41B8ED6F8 /* ThemysMacSafariExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		084A263F32D3787394D7A732 /* SignInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF373E7A52E3A321881303B /* SignInScreen.swift */; };
+		285BCF916B887C37C59FDA11 /* ThemysMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918B0D8F79A099487A3CF90B /* ThemysMacApp.swift */; };
+		31615813AB2A700497044551 /* HistoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92510E36B2C8E16F8F1E625 /* HistoryScreen.swift */; };
+		4128AF0BBA67EDF5F59515B9 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3832E2597B7E8AA06E0DC98 /* SafariWebExtensionHandler.swift */; };
+		460C738B9972E26BD9D2B123 /* SessionBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FFB386313B63112C0AB41 /* SessionBridge.swift */; };
+		4B1858BAB1DEBE8457DCC2E3 /* ClerkKit in Frameworks */ = {isa = PBXBuildFile; productRef = CB07DE180BE4AEA5C5EBC519 /* ClerkKit */; };
+		4C5318A2C86D002024AB4BEB /* ThemysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999F59E41B8D854ACB23BBB /* ThemysApp.swift */; };
+		86D1258CB73A3D78B235BF7A /* ClerkKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = 424C7F3F300FE48062EC1733 /* ClerkKitUI */; };
+		9093E72175337ECA00173FE1 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B788DE994F2A66039E4A3C5 /* SettingsScreen.swift */; };
+		9366628B93384637520473BC /* ClerkKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD53F6E6A50EAFDE8BC526A /* ClerkKit */; };
+		962A91FB6A3EF932C988C64E /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BC77DE0F3913F3DC71274 /* SafariWebExtensionHandler.swift */; };
+		98CA09F0F369EADD87D02592 /* ThemysSafariExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D93DB505FF07AF038A257E39 /* ThemysSafariExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BBEE37B9AC3C94798C6C8670 /* ThemysAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5230DD1BB7F47BB74DAE4B0 /* ThemysAPI.swift */; };
+		BF737BFAF2B5715106DC6C55 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C655E3538433DB78643058 /* AuthController.swift */; };
+		CFA439757A20F5A66C72A3F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01F245F6AF78E4BDECC92266 /* Assets.xcassets */; };
+		E3810C8601BFB6A8DD08B4EC /* HostnameMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E72029595CD5F34EFADD24 /* HostnameMatcher.swift */; };
+		E645438B22119590D259E39A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69FC24CF8AC4CF33C979AC3 /* RootView.swift */; };
+		ED417D6682E124DB993FD359 /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE6A383E8E7B19524CBB8A /* OnboardingScreen.swift */; };
+		F2544ED2E38C656B111605AF /* SessionBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FFB386313B63112C0AB41 /* SessionBridge.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4134CD7AE44936BCAEBDE8F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CA5D76D912C257B1DF7F83E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E61B66F184B0179FF34CEDA;
+			remoteInfo = ThemysMacSafariExtension;
+		};
+		4C5D870043FDBAB7C1C10F67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CA5D76D912C257B1DF7F83E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02E4B3D91AC19696DC7E6723;
+			remoteInfo = ThemysSafariExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		50EF8C328F15FBD19873796D /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				98CA09F0F369EADD87D02592 /* ThemysSafariExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A62EACED5856B4B1249AC96F /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				06B9D4DC16FB1BACF02CF8F6 /* ThemysMacSafariExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		01F245F6AF78E4BDECC92266 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0AD6BE9B9486C2D377508576 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		186BC77DE0F3913F3DC71274 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		28AE6A383E8E7B19524CBB8A /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
+		2999F59E41B8D854ACB23BBB /* ThemysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemysApp.swift; sourceTree = "<group>"; };
+		2B9D9F6CC8F8D2686C7F2008 /* Themys.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Themys.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		39AD73B89068F2A78B55F926 /* Themys.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Themys.entitlements; sourceTree = "<group>"; };
+		5C710C4B98C5E627D550335D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5FF373E7A52E3A321881303B /* SignInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreen.swift; sourceTree = "<group>"; };
+		918B0D8F79A099487A3CF90B /* ThemysMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemysMacApp.swift; sourceTree = "<group>"; };
+		956FFB386313B63112C0AB41 /* SessionBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionBridge.swift; sourceTree = "<group>"; };
+		988EC221C18117A41B8ED6F8 /* ThemysMacSafariExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ThemysMacSafariExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B788DE994F2A66039E4A3C5 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
+		A67A77038C61C9041EAF66CA /* ThemysMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThemysMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A69FC24CF8AC4CF33C979AC3 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		AE52D343C5EA6357D6D1BBF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B4E72029595CD5F34EFADD24 /* HostnameMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostnameMatcher.swift; sourceTree = "<group>"; };
+		C3832E2597B7E8AA06E0DC98 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		D5230DD1BB7F47BB74DAE4B0 /* ThemysAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemysAPI.swift; sourceTree = "<group>"; };
+		D8C655E3538433DB78643058 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		D93DB505FF07AF038A257E39 /* ThemysSafariExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ThemysSafariExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E87179E22A6D05968FA48055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E8FC80199BBC69AB34E6ED38 /* ThemysSafariExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ThemysSafariExtension.entitlements; sourceTree = "<group>"; };
+		E92510E36B2C8E16F8F1E625 /* HistoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryScreen.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F6DC8E0588F5482C22F676A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9366628B93384637520473BC /* ClerkKit in Frameworks */,
+				86D1258CB73A3D78B235BF7A /* ClerkKitUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB654BCADF1C347128B2868B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B1858BAB1DEBE8457DCC2E3 /* ClerkKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D45CF95812E6850FD99E9DE /* Themys */ = {
+			isa = PBXGroup;
+			children = (
+				01F245F6AF78E4BDECC92266 /* Assets.xcassets */,
+				D8C655E3538433DB78643058 /* AuthController.swift */,
+				E92510E36B2C8E16F8F1E625 /* HistoryScreen.swift */,
+				5C710C4B98C5E627D550335D /* Info.plist */,
+				28AE6A383E8E7B19524CBB8A /* OnboardingScreen.swift */,
+				A69FC24CF8AC4CF33C979AC3 /* RootView.swift */,
+				9B788DE994F2A66039E4A3C5 /* SettingsScreen.swift */,
+				5FF373E7A52E3A321881303B /* SignInScreen.swift */,
+				39AD73B89068F2A78B55F926 /* Themys.entitlements */,
+				D5230DD1BB7F47BB74DAE4B0 /* ThemysAPI.swift */,
+				2999F59E41B8D854ACB23BBB /* ThemysApp.swift */,
+				B6AC1492F2FC1CC8199DEE82 /* FilterSequel */,
+			);
+			path = Themys;
+			sourceTree = "<group>";
+		};
+		1AA36FEE870F3885148474B3 /* ThemysMac */ = {
+			isa = PBXGroup;
+			children = (
+				E87179E22A6D05968FA48055 /* Info.plist */,
+				918B0D8F79A099487A3CF90B /* ThemysMacApp.swift */,
+			);
+			path = ThemysMac;
+			sourceTree = "<group>";
+		};
+		3FEE46CBD4ED68C728D56409 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				956FFB386313B63112C0AB41 /* SessionBridge.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		64222873CE3065B6D01E8C49 /* ThemysSafariExtension */ = {
+			isa = PBXGroup;
+			children = (
+				AE52D343C5EA6357D6D1BBF2 /* Info.plist */,
+				C3832E2597B7E8AA06E0DC98 /* SafariWebExtensionHandler.swift */,
+			);
+			path = ThemysSafariExtension;
+			sourceTree = "<group>";
+		};
+		7AC2CC2DC8E98BA6861D4281 /* ThemysSafariExtension */ = {
+			isa = PBXGroup;
+			children = (
+				0AD6BE9B9486C2D377508576 /* Info.plist */,
+				186BC77DE0F3913F3DC71274 /* SafariWebExtensionHandler.swift */,
+				E8FC80199BBC69AB34E6ED38 /* ThemysSafariExtension.entitlements */,
+			);
+			path = ThemysSafariExtension;
+			sourceTree = "<group>";
+		};
+		B64F9C4B9209F8A2A64BC8AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2B9D9F6CC8F8D2686C7F2008 /* Themys.app */,
+				A67A77038C61C9041EAF66CA /* ThemysMac.app */,
+				988EC221C18117A41B8ED6F8 /* ThemysMacSafariExtension.appex */,
+				D93DB505FF07AF038A257E39 /* ThemysSafariExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B6AC1492F2FC1CC8199DEE82 /* FilterSequel */ = {
+			isa = PBXGroup;
+			children = (
+				B4E72029595CD5F34EFADD24 /* HostnameMatcher.swift */,
+			);
+			path = FilterSequel;
+			sourceTree = "<group>";
+		};
+		BDF95B6BD26C3DBF44257523 = {
+			isa = PBXGroup;
+			children = (
+				3FEE46CBD4ED68C728D56409 /* Shared */,
+				0D45CF95812E6850FD99E9DE /* Themys */,
+				7AC2CC2DC8E98BA6861D4281 /* ThemysSafariExtension */,
+				F2E003618CF3E433D28A6CBD /* TOScanner */,
+				B64F9C4B9209F8A2A64BC8AF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F2E003618CF3E433D28A6CBD /* TOScanner */ = {
+			isa = PBXGroup;
+			children = (
+				FE6C27B0D20B945FF71EFDE9 /* macos */,
+			);
+			name = TOScanner;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		FE6C27B0D20B945FF71EFDE9 /* macos */ = {
+			isa = PBXGroup;
+			children = (
+				1AA36FEE870F3885148474B3 /* ThemysMac */,
+				64222873CE3065B6D01E8C49 /* ThemysSafariExtension */,
+			);
+			path = macos;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		02E4B3D91AC19696DC7E6723 /* ThemysSafariExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B77DB623A322DF297DDE369 /* Build configuration list for PBXNativeTarget "ThemysSafariExtension" */;
+			buildPhases = (
+				4B60837F81B246A5AA56D25C /* Sources */,
+				CB654BCADF1C347128B2868B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThemysSafariExtension;
+			packageProductDependencies = (
+				CB07DE180BE4AEA5C5EBC519 /* ClerkKit */,
+			);
+			productName = ThemysSafariExtension;
+			productReference = D93DB505FF07AF038A257E39 /* ThemysSafariExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		7DDD719EBF3E2D04625D8279 /* Themys */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C09F1CD79FD68E9685BDE82F /* Build configuration list for PBXNativeTarget "Themys" */;
+			buildPhases = (
+				7411719BA276C4AAC1DC557D /* Sources */,
+				BC00B3192B531139E51B2001 /* Resources */,
+				3F6DC8E0588F5482C22F676A /* Frameworks */,
+				50EF8C328F15FBD19873796D /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1303CCE3CFE00BBB8AA174D9 /* PBXTargetDependency */,
+			);
+			name = Themys;
+			packageProductDependencies = (
+				8CD53F6E6A50EAFDE8BC526A /* ClerkKit */,
+				424C7F3F300FE48062EC1733 /* ClerkKitUI */,
+			);
+			productName = Themys;
+			productReference = 2B9D9F6CC8F8D2686C7F2008 /* Themys.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7E61B66F184B0179FF34CEDA /* ThemysMacSafariExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0440138260C1EE3177993D00 /* Build configuration list for PBXNativeTarget "ThemysMacSafariExtension" */;
+			buildPhases = (
+				DD0ED14EF3DFDFEED1A9F483 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThemysMacSafariExtension;
+			packageProductDependencies = (
+			);
+			productName = ThemysMacSafariExtension;
+			productReference = 988EC221C18117A41B8ED6F8 /* ThemysMacSafariExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		F2F6B037CA122F88C878BD7B /* ThemysMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 104AE6194083CEEB1471DFE8 /* Build configuration list for PBXNativeTarget "ThemysMac" */;
+			buildPhases = (
+				19A8DE334C7402E276C44BE2 /* Sources */,
+				A62EACED5856B4B1249AC96F /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D9D1F2445A2C7233F94DF976 /* PBXTargetDependency */,
+			);
+			name = ThemysMac;
+			packageProductDependencies = (
+			);
+			productName = ThemysMac;
+			productReference = A67A77038C61C9041EAF66CA /* ThemysMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8CA5D76D912C257B1DF7F83E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					02E4B3D91AC19696DC7E6723 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					7DDD719EBF3E2D04625D8279 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					7E61B66F184B0179FF34CEDA = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					F2F6B037CA122F88C878BD7B = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9292349B81D49FDACAA3201A /* Build configuration list for PBXProject "Themys" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = BDF95B6BD26C3DBF44257523;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				6DAA582B75B296D407A32B90 /* XCRemoteSwiftPackageReference "clerk-ios" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B64F9C4B9209F8A2A64BC8AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7DDD719EBF3E2D04625D8279 /* Themys */,
+				02E4B3D91AC19696DC7E6723 /* ThemysSafariExtension */,
+				F2F6B037CA122F88C878BD7B /* ThemysMac */,
+				7E61B66F184B0179FF34CEDA /* ThemysMacSafariExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BC00B3192B531139E51B2001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFA439757A20F5A66C72A3F8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		19A8DE334C7402E276C44BE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				285BCF916B887C37C59FDA11 /* ThemysMacApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B60837F81B246A5AA56D25C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				962A91FB6A3EF932C988C64E /* SafariWebExtensionHandler.swift in Sources */,
+				460C738B9972E26BD9D2B123 /* SessionBridge.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7411719BA276C4AAC1DC557D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF737BFAF2B5715106DC6C55 /* AuthController.swift in Sources */,
+				31615813AB2A700497044551 /* HistoryScreen.swift in Sources */,
+				E3810C8601BFB6A8DD08B4EC /* HostnameMatcher.swift in Sources */,
+				ED417D6682E124DB993FD359 /* OnboardingScreen.swift in Sources */,
+				E645438B22119590D259E39A /* RootView.swift in Sources */,
+				F2544ED2E38C656B111605AF /* SessionBridge.swift in Sources */,
+				9093E72175337ECA00173FE1 /* SettingsScreen.swift in Sources */,
+				084A263F32D3787394D7A732 /* SignInScreen.swift in Sources */,
+				BBEE37B9AC3C94798C6C8670 /* ThemysAPI.swift in Sources */,
+				4C5318A2C86D002024AB4BEB /* ThemysApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD0ED14EF3DFDFEED1A9F483 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4128AF0BBA67EDF5F59515B9 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1303CCE3CFE00BBB8AA174D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02E4B3D91AC19696DC7E6723 /* ThemysSafariExtension */;
+			targetProxy = 4C5D870043FDBAB7C1C10F67 /* PBXContainerItemProxy */;
+		};
+		D9D1F2445A2C7233F94DF976 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E61B66F184B0179FF34CEDA /* ThemysMacSafariExtension */;
+			targetProxy = 4134CD7AE44936BCAEBDE8F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3FB2217ED010A66A46E506D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ThemysSafariExtension/ThemysSafariExtension.entitlements;
+				INFOPLIST_FILE = ThemysSafariExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ca.themys.app.safari;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		40B4F17DB85FD6E86DD869A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ../macos/ThemysMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ca.themys.mac;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		66D815650C0E4D8BE69E5434 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ../macos/ThemysSafariExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ca.themys.mac.safari;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		6C0B330F2177FBB9FA7AE79F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Themys/Themys.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Themys/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ca.themys.app;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A0C3F295D3A7DA9C98FFC77B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ThemysSafariExtension/ThemysSafariExtension.entitlements;
+				INFOPLIST_FILE = ThemysSafariExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ca.themys.app.safari;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AB318A097BEFBE518E84A33A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Themys/Themys.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Themys/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ca.themys.app;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC8E61487534EC90358FE2B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ../macos/ThemysMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ca.themys.mac;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		BCED6CE1DE94711512A6EB9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D396CE51201BE5557676ED49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E075503261B38F3347D32038 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ../macos/ThemysSafariExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ca.themys.mac.safari;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0440138260C1EE3177993D00 /* Build configuration list for PBXNativeTarget "ThemysMacSafariExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E075503261B38F3347D32038 /* Debug */,
+				66D815650C0E4D8BE69E5434 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		104AE6194083CEEB1471DFE8 /* Build configuration list for PBXNativeTarget "ThemysMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC8E61487534EC90358FE2B6 /* Debug */,
+				40B4F17DB85FD6E86DD869A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2B77DB623A322DF297DDE369 /* Build configuration list for PBXNativeTarget "ThemysSafariExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0C3F295D3A7DA9C98FFC77B /* Debug */,
+				3FB2217ED010A66A46E506D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9292349B81D49FDACAA3201A /* Build configuration list for PBXProject "Themys" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D396CE51201BE5557676ED49 /* Debug */,
+				BCED6CE1DE94711512A6EB9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C09F1CD79FD68E9685BDE82F /* Build configuration list for PBXNativeTarget "Themys" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB318A097BEFBE518E84A33A /* Debug */,
+				6C0B330F2177FBB9FA7AE79F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6DAA582B75B296D407A32B90 /* XCRemoteSwiftPackageReference "clerk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/clerk/clerk-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		424C7F3F300FE48062EC1733 /* ClerkKitUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6DAA582B75B296D407A32B90 /* XCRemoteSwiftPackageReference "clerk-ios" */;
+			productName = ClerkKitUI;
+		};
+		8CD53F6E6A50EAFDE8BC526A /* ClerkKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6DAA582B75B296D407A32B90 /* XCRemoteSwiftPackageReference "clerk-ios" */;
+			productName = ClerkKit;
+		};
+		CB07DE180BE4AEA5C5EBC519 /* ClerkKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6DAA582B75B296D407A32B90 /* XCRemoteSwiftPackageReference "clerk-ios" */;
+			productName = ClerkKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8CA5D76D912C257B1DF7F83E /* Project object */;
+}

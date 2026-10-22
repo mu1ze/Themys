@@ -1,0 +1,68 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "main": "custom-worker.ts",
+  "name": "themys-admin",
+  "compatibility_date": "2026-06-17",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "alias": {
+    "server-only": "../src/lib/server-only-empty.ts"
+  },
+  "secrets": {
+    "required": [
+      "ADMIN_CLERK_IDS",
+      "CLERK_SECRET_KEY",
+      "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY"
+    ]
+  },
+  "vars": {
+    "APP_URL": "https://admin.themys.ca",
+    "NEXT_PUBLIC_APP_URL": "https://admin.themys.ca",
+    "MONITORING_EMAIL_FROM": "alerts@themys.ca"
+  },
+  "services": [
+    {
+      "binding": "MONITORING_EMAIL_WORKER",
+      "service": "themys-monitoring-email"
+    }
+  ],
+  "routes": [
+    {
+      "pattern": "admin.themys.ca",
+      "custom_domain": true
+    }
+  ],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "themys-db",
+      "database_id": "237af800-948d-47ee-bdb2-c5d4500ca937",
+      "remote": true,
+      "migrations_dir": "../d1/migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "DOCUMENTS_BUCKET",
+      "bucket_name": "themys-documents",
+      "remote": true
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "NEXT_INC_CACHE_KV",
+      "id": "42c47b929aac4e0695f5decd3e11fbbf"
+    },
+    {
+      "binding": "CACHE_KV",
+      "id": "42c47b929aac4e0695f5decd3e11fbbf",
+      "remote": true
+    }
+  ],
+  "observability": {
+    "enabled": false
+  }
+}

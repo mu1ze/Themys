@@ -1,0 +1,9 @@
+node_modules
+.next
+.wrangler
+out
+*.tsbuildinfo
+
+# Generated at build time by scripts/generate-sitemap.mjs
+public/sitemap.xml
+public/sitemap.xsl

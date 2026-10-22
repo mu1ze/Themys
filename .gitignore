@@ -1,0 +1,87 @@
+# dependencies
+node_modules
+
+# next / cloudflare builds
+.next
+.open-next
+.wrangler
+
+# generated types
+cloudflare-env.d.ts
+*.tsbuildinfo
+
+# environment files (including nested apps and future environment names)
+.env*
+!.env.example
+!.env.*.example
+.dev.vars*
+!.dev.vars.example
+
+# Legacy database CLI local metadata (retained only for migration tooling)
+supabase/.temp/
+
+# misc
+*.log
+.DS_Store
+pricing-page-with-credits.png
+.playwright-mcp/page-2026-06-24T00-41-25-701Z.yml
+.kilo/*
+
+# clerk configuration (can include secrets)
+/.clerk/
+products.csv
+test-scans.js
+test-db.js
+
+# Playwright
+e2e/.auth/
+playwright-report/
+test-results/
+blob-report/
+audit-report/
+signin_page.png
+test_clerk.py
+.playwright-mcp/*
+screenshots/*
+artifacts/*
+# The reviewed browser extension artifacts are the canonical extension source.
+# Keep generated archives and unrelated artifacts ignored, but version the
+# unpacked development/production bundles used by Safari and Chrome checks.
+!artifacts/extension/
+!artifacts/extension/development/
+!artifacts/extension/development/**
+!artifacts/extension/production/
+!artifacts/extension/production/**
+artifacts/extension/*.zip
+artifacts/extension/.DS_Store
+artifacts/extension/*/.DS_Store
+build_model.py
+.commandcode/*
+Business/*
+
+
+.commandcode/taste/taste.md
+.superpowers/*
+.claude/*
+.mcp.json
+skills-lock.json
+.pnpm-store/
+
+# Local credentials, database copies, and agent tooling
+*.pem
+*.key
+*.p12
+*.pfx
+*.mobileprovision
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+.hermes/
+.cursor/
+.private/
+gitleaks-report*
+videos/themys/capture/
+.agents/
+skills/

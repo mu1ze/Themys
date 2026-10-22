@@ -1,0 +1,31 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "themys-monitoring-email",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-06",
+  "workers_dev": false,
+  "send_email": [{ "name": "SEND_EMAIL" }],
+  "durable_objects": {
+    "bindings": [{ "name": "DELIVERY_COORDINATOR", "class_name": "DeliveryCoordinator" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["DeliveryCoordinator"] }],
+  "vars": {
+    "APP_URL": "https://themys.ca",
+    "MONITORING_EMAIL_FROM": "alerts@themys.ca"
+  },
+  "env": {
+    "staging": {
+      "name": "themys-monitoring-email-staging",
+      "workers_dev": true,
+      "send_email": [{ "name": "SEND_EMAIL" }],
+      "durable_objects": {
+        "bindings": [{ "name": "DELIVERY_COORDINATOR", "class_name": "DeliveryCoordinator" }]
+      },
+      "migrations": [{ "tag": "v1", "new_sqlite_classes": ["DeliveryCoordinator"] }],
+      "vars": {
+        "APP_URL": "https://staging.themys.ca",
+        "MONITORING_EMAIL_FROM": "alerts@themys.ca"
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      next-runtime:
+        patterns:
+          - next
+          - "@next/*"
+          - eslint-config-next
+      testing:
+        dependency-type: development
+        patterns:
+          - "@playwright/*"
+          - "@clerk/testing"
+      cloudflare:
+        patterns:
+          - wrangler
+          - "@opennextjs/*"

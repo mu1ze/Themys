@@ -1,0 +1,45 @@
+{
+  "name": "@themys/docs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3001",
+    "build": "node scripts/generate-sitemap.mjs && next build --webpack",
+    "verify:export": "node scripts/verify-export.mjs",
+    "verify:production": "node scripts/verify-production.mjs",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "preview": "pnpm build && wrangler dev",
+    "deploy": "pnpm build && wrangler deploy"
+  },
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "dependencies": {
+    "gray-matter": "4.0.3",
+    "next": "16.3.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.1",
+    "@types/node": "20.19.43",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.3.0",
+    "tailwindcss": "4.3.1",
+    "typescript": "5.9.3",
+    "wrangler": "4.103.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "gray-matter>js-yaml": "3.15.1",
+      "next>postcss": "8.5.23",
+      "typescript-eslint": "8.61.1",
+      "@typescript-eslint/utils": "8.61.1",
+      "@typescript-eslint/parser": "8.61.1",
+      "@typescript-eslint/eslint-plugin": "8.61.1"
+    }
+  }
+}
