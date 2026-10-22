@@ -86,7 +86,7 @@
   "devDependencies": {
     "@clerk/backend": "^3.16.1",
     "@clerk/testing": "^2.2.19",
-    "@opennextjs/cloudflare": "^1.20.6",
+    "@opennextjs/cloudflare": "^1.20.12",
     "@playwright/test": "^1.61.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
@@ -97,7 +97,7 @@
     "eslint-config-next": "16.3.8",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "wrangler": "^4.131.0"
+    "wrangler": "^4.151.2"
   },
   "packageManager": "pnpm@10.33.0",
   "pnpm": {
