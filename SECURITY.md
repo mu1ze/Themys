@@ -40,6 +40,27 @@ updates.
 
 ## Dependency evidence
 
+### Known upstream blocker (October 22, 2026)
+
+The OSV gate reports [GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm)
+in `braces@3.0.3`. No patched release is available. In the root package this
+enters through the development-only chain
+`eslint-config-next` → `@next/eslint-plugin-next` → `fast-glob` → `micromatch` →
+`braces`; it is absent from the production dependency graph. The issue is
+stack exhaustion when parsing deeply nested glob patterns. Do not route
+untrusted runtime input through this tooling.
+
+This is not an accepted exception: the OSV check remains failing until the
+upstream issue is fixed or the dependency is safely removed. Unit tests,
+type checks, builds, and credential scans run independently. Contributors do
+not need maintainer credentials to run those checks.
+
+The public web, documentation, and admin packages use Next.js 16.4.1, which
+patches [GHSA-2464-fhr4-w9xw](https://github.com/advisories/GHSA-2464-fhr4-w9xw)
+and [GHSA-p3m5-59mp-jv5r](https://github.com/advisories/GHSA-p3m5-59mp-jv5r).
+This source update does not establish that the separately deployed hosted
+service has received the same update.
+
 There are no standing vulnerability or audit-transport exceptions. A release
 record must include both the OSV lockfile result and a registry-connected
 production audit:

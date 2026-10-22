@@ -96,3 +96,7 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) for scope, tests, and pull requests,
 [SECURITY.md](SECURITY.md) for private vulnerability reporting, and
 [ARCHITECTURE.md](ARCHITECTURE.md) for runtime details. Code is licensed under
 the [MIT license](LICENSE).
+
+The dependency security gate currently reports an unpatched `braces` advisory
+in the ESLint development toolchain. See [SECURITY.md](SECURITY.md#dependency-evidence)
+for the scope and status; tests, builds, and credential checks are independent.
