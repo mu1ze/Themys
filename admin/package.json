@@ -9,7 +9,7 @@
     "build:workers": "opennextjs-cloudflare build",
     "deploy": "pnpm build:workers && opennextjs-cloudflare deploy",
     "upload": "pnpm build:workers && opennextjs-cloudflare upload",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "node ../scripts/prepare-worker-build.mjs && tsc --noEmit",
     "lint": "pnpm --dir .. exec eslint admin/next.config.ts admin/src src/components/admin src/features/admin/metrics",
     "test:metrics": "node --test tests/*.test.mjs"
   },
@@ -28,18 +28,19 @@
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
-    "@opennextjs/cloudflare": "^1.20.1",
+    "@opennextjs/cloudflare": "^1.20.13",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "wrangler": "^4.103.0"
+    "wrangler": "^4.152.0"
   },
   "pnpm": {
     "overrides": {
-      "next>postcss": "8.5.15"
+      "next>postcss": "8.5.23",
+      "@node-minify/core>glob": "10.5.0"
     },
     "onlyBuiltDependencies": [
       "esbuild",

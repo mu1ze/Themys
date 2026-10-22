@@ -40,7 +40,7 @@ updates.
 
 ## Dependency evidence
 
-### Known upstream blocker (October 22, 2026)
+### Known upstream blockers (October 22, 2026)
 
 The OSV gate reports [GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm)
 in `braces@3.0.3`. No patched release is available. In the root package this
@@ -54,6 +54,12 @@ This is not an accepted exception: the OSV check remains failing until the
 upstream issue is fixed or the dependency is safely removed. Unit tests,
 type checks, builds, and credential scans run independently. Contributors do
 not need maintainer credentials to run those checks.
+
+The documentation package also reports the unpatched moderate
+[sprintf-js advisory](https://github.com/advisories/GHSA-hp3w-g68c-fv3c) through
+`gray-matter` → `js-yaml` → `argparse`. The YAML parser itself is patched to
+3.15.2. This CLI dependency is not used by the statically exported documentation
+site. It remains visible to audits; no release-policy exception is granted.
 
 The public web, documentation, and admin packages use Next.js 16.4.1, which
 patches [GHSA-2464-fhr4-w9xw](https://github.com/advisories/GHSA-2464-fhr4-w9xw)

@@ -1,4 +1,5 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
 
 import { isAdminPath, isProtectedAppPath } from "@/lib/proxy-routing";
 
@@ -13,7 +14,7 @@ export default clerkMiddleware(
     }
 
     if (isAdminPath(pathname)) {
-      return Response.redirect(
+      return NextResponse.redirect(
         new URL(`${pathname}${search}`, "https://admin.themys.ca"),
         308,
       );

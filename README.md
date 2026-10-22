@@ -100,3 +100,9 @@ the [MIT license](LICENSE).
 The dependency security gate currently reports an unpatched `braces` advisory
 in the ESLint development toolchain. See [SECURITY.md](SECURITY.md#dependency-evidence)
 for the scope and status; tests, builds, and credential checks are independent.
+
+Web and admin builds pair Next.js 16.4.1 with OpenNext 1.20.13 and Wrangler
+4.152.0. Earlier adapters can compile successfully but fail when serving dynamic
+routes because they do not inline the new preview-properties manifest.
+See the [upstream fix](https://github.com/opennextjs/opennextjs-cloudflare/pull/1356).
+The build scripts prepare isolated Worker type declarations automatically.

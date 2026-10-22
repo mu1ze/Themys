@@ -1,5 +1,7 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
 
+// OpenNext Cloudflare requires the Edge middleware convention; Next.js 16's
+// proxy convention selects the unsupported Node.js middleware runtime.
 export default clerkMiddleware({
   signInUrl: "/sign-in",
   signUpUrl: "/sign-in",
